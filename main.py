@@ -1,4 +1,4 @@
-from sorting import random_numbers, selection_sort
+from sorting import random_numbers, selection_sort, bubble_sort
 
 
 
@@ -8,6 +8,7 @@ def main():
     numbers = random_numbers(20)
     print(numbers)
     print(selection_sort(numbers))
+    print(bubble_sort(numbers))
 
 
 
