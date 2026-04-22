@@ -29,6 +29,7 @@ def bubble_sort(numbers):
     plt.ion()  # Vytvoří prázdný plot
     plt.show()  # Ukáže prázdný plot
 
+    numbers = numbers.copy()
     for it in range(len(numbers) - 1):
         for idx in range(len(numbers) - 1 - it): #Prochází seznam po délku seznamu, kromě posledního prvku, který je již seřazený, a odečítá od toho již seřazené prvky it
             if numbers[idx] > numbers[idx + 1]:
@@ -48,4 +49,6 @@ def bubble_sort(numbers):
     plt.ioff()
     plt.show()
     return numbers
+
+
 
