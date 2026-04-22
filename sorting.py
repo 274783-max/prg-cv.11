@@ -5,23 +5,22 @@ def random_numbers(count, low=0, high=100):
     return [random.randint(low, high) for _ in range(count)]
 
 def selection_sort(numbers):
+    """Funkce projde seznam a pokud se aktuální prvek rovná minimu, vymění prvek na 1. místo v seznamu"""
     numbers = numbers.copy()
-    sorted_list = []
-    while numbers:
-        minimum = min(numbers)
-        sorted_list.append(minimum)
-        numbers.remove(minimum)
 
-    #for i in range(len(numbers)):
-    #    minimum = min(numbers)
-    #    if i == minimum:
-    #        sorted_list.append(i)
-    return sorted_list
+    for it in range(len(numbers)):
+        minimum = it
+        for idx in range(it + 1, len(numbers)):
+            if numbers[idx] < numbers[minimum]:
+                minimum = idx
+        if minimum != idx: # Pokud by byl seznam seřazený, neprovedlo by se vyměnění
+            numbers[it], numbers[minimum] = numbers[minimum], numbers[it]
+            # ALTERNATIVNI VERZE
+            # sorted_list = []
+            # while numbers:
+            #    minimum = min(numbers)
+            #    sorted_list.append(minimum)
+            #    numbers.remove(minimum)
+            # return sorted_list
+    return numbers
 
-
-        #for i in range n:
-        #    n -= 1
-
-
-        #if minimum < numbers[0]:
-        #    numbers[minimum] = numbers[0]
